@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: start;
+  padding: 24px 0;
+}
+
+.header > a {
+  margin-right: 280px;
+}
+
+.header > .menu {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}

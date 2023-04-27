@@ -1,0 +1,10 @@
+.header-wrapper {
+  margin-bottom: 40px;
+  background-color: #ffffff;
+}
+
+.search-inner {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 28px; */
+}

@@ -1,0 +1,57 @@
+.filter-bar {
+  width: 315px;
+  /* height: 360px; */
+  padding: 19px;
+  background: #FFFFFF;
+  border: 1px solid #EAEBED;
+  border-radius: 12px;
+}
+
+.filter-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.filter-title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.filter-reset {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.filter-reset > span {
+  font-weight: 500;
+  font-size: 14px;
+  color: #ACADB9;
+}
+
+.filter-industry, .filter-salary {
+  margin-bottom: 20px;
+}
+
+.industry-title, .salary-title {
+  font-weight: 700;
+  line-height: 19px;
+  margin-bottom: 8px;
+}
+
+.filter-button {
+  border: none;
+  background: #5E96FC;
+  border-radius: 8px;
+  /* width: 275px;
+  height: 40px; */
+  width: 100%;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #FFFFFF;
+  text-align: center;
+}
