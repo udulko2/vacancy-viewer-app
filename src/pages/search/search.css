@@ -6,5 +6,18 @@
 .search-inner {
   display: flex;
   justify-content: space-between;
-  /* gap: 28px; */
+  align-items: flex-start;
+}
+
+.search-results {
+  margin-bottom: 40px;
+}
+
+.search-input, .card {
+  margin-bottom: 16px;
+}
+
+.mantine-Group-root {
+  width: fit-content;
+  margin: 0 auto 44px auto;
 }

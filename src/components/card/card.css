@@ -1,0 +1,53 @@
+.card {
+  width: 773px;
+  /* height: 137px; */
+  padding: 23px;
+  background: #FFFFFF;
+  border: 1px solid #EAEBED;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.vacancy-name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #5E96FC;
+  margin-bottom: 12px;
+}
+
+.vacancy-details {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.vacancy-details > div:nth-child(1) {
+  font-weight: 600;
+}
+
+.vacancy-details > div:nth-child(2) {
+  /* font-family: 'Poppins'; */
+  font-size: 20px;
+  line-height: 21px;
+  color: #7B7C88;
+}
+
+.vacancy-city {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.vacancy-city > div {
+  line-height: 19px;
+}
+
+.vacancy-star {
+  all: unset;
+  height: 24px;
+  cursor: pointer;
+}

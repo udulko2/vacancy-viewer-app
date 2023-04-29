@@ -35,18 +35,55 @@
   margin-bottom: 20px;
 }
 
-.industry-title, .salary-title {
+.industry-label, .salary-label {
+  display: inline-block;
   font-weight: 700;
   line-height: 19px;
   margin-bottom: 8px;
+}
+
+.mantine-Select-root, .mantine-Select-label {
+  all: unset;
+}
+
+.mantine-Select-label {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 19px;
+  margin-bottom: 8px;
+}
+
+.mantine-Select-input, .mantine-NumberInput-input {
+  height: unset;
+  min-height: unset;
+  padding: 10px 40px 10px 11px;
+  background: #FFFFFF;
+  border: 1px solid #D5D6DC;
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #232134;
+}
+
+.mantine-Select-input::placeholder, .mantine-NumberInput-input::placeholder {
+  color: #ACADB9;
+}
+
+.mantine-NumberInput-rightSection > button {
+  border: none;
+}
+
+.mantine-NumberInput-rightSection > button > svg > path {
+  fill: #ACADB9;
 }
 
 .filter-button {
   border: none;
   background: #5E96FC;
   border-radius: 8px;
-  /* width: 275px;
-  height: 40px; */
   width: 100%;
   height: 40px;
   font-weight: 500;
@@ -54,4 +91,5 @@
   line-height: 21px;
   color: #FFFFFF;
   text-align: center;
+  cursor: pointer;
 }

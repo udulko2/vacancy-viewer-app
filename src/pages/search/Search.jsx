@@ -1,6 +1,8 @@
+import { Pagination } from "@mantine/core";
+import Card from "../../components/card/Card";
 import Filter from "../../components/filter/Filter";
 import Header from "../../components/header/Header";
-import Card from "../../components/search/vacancy/Card";
+import SearchInput from "../../components/search/SearchInput";
 import './search.css';
 
 const Search = () => {
@@ -15,12 +17,15 @@ const Search = () => {
         <div className="container">
           <div className="search-inner">
             <Filter />
-            <div className="search-results">
-              SEARCH RESULTS LIST
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+            <div className="search-root">
+              <SearchInput />
+              <div className="search-results">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+              </div>
+              <Pagination total={10} />
             </div>
           </div>
         </div>
