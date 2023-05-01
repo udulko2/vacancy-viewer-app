@@ -1,0 +1,89 @@
+.vacancy-inner {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.vacancy-summary-card {
+  width: 773px;
+  padding: 23px;
+  background: #FFFFFF;
+  border: 1px solid #EAEBED;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.vs-name {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  color: #232134;
+  margin-bottom: 16px;
+}
+
+.vs-details {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.vs-details > div:nth-child(1) {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.vs-details > div:nth-child(2) {
+  font-size: 20px;
+  line-height: 21px;
+  color: #7B7C88;
+}
+
+.vs-details > div:nth-child(3) {
+  font-size: 20px;
+}
+
+.vs-city {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.vs-city > div {
+  line-height: 22px;
+}
+
+.vs-star {
+  all: unset;
+  /* height: 24px; */
+  cursor: pointer;
+}
+
+.vs-star > svg {
+  display: block;
+}
+
+.vacancy-description-card {
+  width: 773px;
+  padding: 23px;
+  background: #FFFFFF;
+  border: 1px solid #EAEBED;
+  border-radius: 12px;
+}
+
+.vacancy-description-card > div {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.vacancy-description-card > p {
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.vacancy-description-card > p:last-child {
+  margin-bottom: 0;
+}

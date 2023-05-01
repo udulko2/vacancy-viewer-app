@@ -5,13 +5,17 @@ import './header.css';
 
 const Header = () => {
   return (
-    <header className="header">
-      <Link to={'/'}><img src={logo} alt="logo" /></Link>
-      <div className='menu'>
-        <NavLink to={'/search'}>Поиск вакансий</NavLink>
-        <NavLink to={'/starred'}>Избранное</NavLink>
+    <div className="header">
+      <div className="container">
+        <header className="header-inner">
+          <Link to={'/'}><img src={logo} alt="logo" /></Link>
+          <div className='menu'>
+            <NavLink to={'/search'}>Поиск вакансий</NavLink>
+            <NavLink to={'/starred'}>Избранное</NavLink>
+          </div>
+        </header>
       </div>
-    </header>
+    </div>
   );
 };
 

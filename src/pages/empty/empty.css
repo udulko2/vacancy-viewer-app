@@ -1,5 +1,32 @@
-.empty {
-  /* margin: 0 auto; */
+.empty-inner {
+  width: fit-content;
+  margin: 120px auto 0;
+}
+
+.empty-inner > img {
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.empty-inner > div {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #343A40;
+  margin-bottom: 32px;
+}
+
+.empty-inner > a {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 164px;
+  height: 42px;
+  background: #DEECFF;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #3B7CD3;
 }

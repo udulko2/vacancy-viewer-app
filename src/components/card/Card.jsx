@@ -1,7 +1,6 @@
-import './card.css';
 import cityIcon from "./assets/city-icon.svg";
 import { ReactComponent as StarDefault } from './assets/star-default.svg';
-
+import './card.css';
 
 const Card = () => {
   return (

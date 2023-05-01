@@ -1,8 +1,3 @@
-.header-wrapper {
-  margin-bottom: 40px;
-  background-color: #ffffff;
-}
-
 .search-inner {
   display: flex;
   justify-content: space-between;
@@ -13,11 +8,6 @@
   margin-bottom: 40px;
 }
 
-.search-input, .card {
+.search-input, .search-page .card {
   margin-bottom: 16px;
-}
-
-.mantine-Group-root {
-  width: fit-content;
-  margin: 0 auto 44px auto;
 }

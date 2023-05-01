@@ -1,6 +1,5 @@
 .filter-bar {
   width: 315px;
-  /* height: 360px; */
   padding: 19px;
   background: #FFFFFF;
   border: 1px solid #EAEBED;
@@ -36,7 +35,7 @@
 }
 
 .industry-label, .salary-label {
-  display: inline-block;
+  display: block;
   font-weight: 700;
   line-height: 19px;
   margin-bottom: 8px;

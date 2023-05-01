@@ -1,14 +1,18 @@
 .header {
+  background-color: #ffffff;
+}
+
+.header-inner {
   display: flex;
   justify-content: flex-start;
   padding: 24px 0;
 }
 
-.header > a {
+.header-inner > a {
   margin-right: 280px;
 }
 
-.header > .menu {
+.header-inner > .menu {
   display: flex;
   align-items: center;
   gap: 60px;

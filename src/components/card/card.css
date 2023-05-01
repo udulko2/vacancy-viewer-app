@@ -1,6 +1,5 @@
 .card {
   width: 773px;
-  /* height: 137px; */
   padding: 23px;
   background: #FFFFFF;
   border: 1px solid #EAEBED;
@@ -30,7 +29,6 @@
 }
 
 .vacancy-details > div:nth-child(2) {
-  /* font-family: 'Poppins'; */
   font-size: 20px;
   line-height: 21px;
   color: #7B7C88;
@@ -48,6 +46,9 @@
 
 .vacancy-star {
   all: unset;
-  height: 24px;
   cursor: pointer;
+}
+
+.vacancy-star > svg {
+  display: block;
 }
