@@ -71,19 +71,28 @@
   background: #FFFFFF;
   border: 1px solid #EAEBED;
   border-radius: 12px;
-}
-
-.vacancy-description-card > div {
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .vacancy-description-card > p {
   line-height: 22px;
+}
+
+.vacancy-description-card > p > b {
+  display: block;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.vacancy-description-card > ul {
+  all: revert;
+  line-height: 22px;
+  margin-top: 16px;
   margin-bottom: 20px;
 }
 
-.vacancy-description-card > p:last-child {
+.vacancy-description-card > ul:last-child {
   margin-bottom: 0;
 }

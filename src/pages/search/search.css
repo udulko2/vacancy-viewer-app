@@ -11,3 +11,13 @@
 .search-input, .search-page .card {
   margin-bottom: 16px;
 }
+
+.search-page .loader {
+  width: fit-content;
+  margin: 80px auto 0;
+}
+
+/* .no-results {
+  width: fit-content;
+  margin: 40px auto 0;
+} */

@@ -52,3 +52,12 @@
 .vacancy-star > svg {
   display: block;
 }
+
+.card .vacancy-star:hover > svg > path {
+  stroke: #5E96FC;
+}
+
+.card .vacancy-star.starred > svg > path {
+  fill: #5E96FC;
+  stroke: #5E96FC;
+}

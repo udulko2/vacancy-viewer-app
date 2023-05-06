@@ -1,27 +1,18 @@
-.empty-inner {
-  width: fit-content;
-  margin: 120px auto 0;
-}
-
-/* .empty-inner {
-  width: fit-content;
-  margin: 120px auto 0;
-}
-
-.empty-inner > img {
+.empty-state > img {
   margin: 0 auto;
   margin-bottom: 32px;
 }
 
-.empty-inner > div {
+.empty-state > div {
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
   color: #343A40;
   margin-bottom: 32px;
+  text-align: center;
 }
 
-.empty-inner > a {
+.empty-state > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,4 +25,4 @@
   font-size: 14px;
   line-height: 22px;
   color: #3B7CD3;
-} */
+}

@@ -13,7 +13,7 @@ const App = () => {
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Navigate to='/search' />} />
           <Route path='/search' Component={Search} />
-          <Route path='/vacancy' Component={Vacancy} />
+          <Route path='/vacancy/:id' Component={Vacancy} />
           <Route path='/starred' Component={Starred} />
           <Route path='/empty' Component={Empty} />
         </Route>
