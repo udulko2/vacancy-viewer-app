@@ -4,7 +4,8 @@
 }
 
 .vacancy-summary-card {
-  width: 773px;
+  max-width: 773px;
+  width: 100%;
   padding: 23px;
   background: #FFFFFF;
   border: 1px solid #EAEBED;
@@ -57,7 +58,6 @@
 
 .vs-star {
   all: unset;
-  /* height: 24px; */
   cursor: pointer;
 }
 
@@ -65,8 +65,18 @@
   display: block;
 }
 
+.vacancy-page .vs-star:hover > svg > path {
+  stroke: #5E96FC;
+}
+
+.vacancy-page .vs-star.starred > svg > path {
+  fill: #5E96FC;
+  stroke: #5E96FC;
+}
+
 .vacancy-description-card {
-  width: 773px;
+  max-width: 773px;
+  width: 100%;
   padding: 23px;
   background: #FFFFFF;
   border: 1px solid #EAEBED;

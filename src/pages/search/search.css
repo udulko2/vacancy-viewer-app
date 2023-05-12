@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 28px;
+}
+
+.search-root {
+  width: 100%;
 }
 
 .search-results {
@@ -16,8 +21,3 @@
   width: fit-content;
   margin: 80px auto 0;
 }
-
-/* .no-results {
-  width: fit-content;
-  margin: 40px auto 0;
-} */

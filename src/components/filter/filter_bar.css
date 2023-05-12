@@ -4,6 +4,7 @@
   background: #FFFFFF;
   border: 1px solid #EAEBED;
   border-radius: 12px;
+  flex-shrink: 0;
 }
 
 .filter-top {
@@ -20,14 +21,20 @@
 .filter-reset {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 4px;
   cursor: pointer;
-}
-
-.filter-reset > span {
   font-weight: 500;
   font-size: 14px;
   color: #ACADB9;
+}
+
+.filter-reset:hover {
+  color: #92C1FF;
+}
+
+.filter-reset:hover > svg > line {
+  stroke: #92C1FF;
 }
 
 .filter-industry, .filter-salary {
@@ -71,6 +78,10 @@
   color: #ACADB9;
 }
 
+.mantine-NumberInput-rightSection > .mantine-NumberInput-rightSection {
+  height: 28px;
+}
+
 .mantine-NumberInput-rightSection > button {
   border: none;
 }
@@ -91,4 +102,8 @@
   color: #FFFFFF;
   text-align: center;
   cursor: pointer;
+}
+
+.filter-button:hover {
+  background-color: #3B7CD3;
 }

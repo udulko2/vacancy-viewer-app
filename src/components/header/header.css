@@ -5,15 +5,22 @@
 .header-inner {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   padding: 24px 0;
+  gap: 280px;
 }
 
 .header-inner > a {
-  margin-right: 280px;
+  flex-shrink: 0;
 }
 
 .header-inner > .menu {
   display: flex;
   align-items: center;
   gap: 60px;
+}
+
+.header .menu > .active {
+  font-weight: 500;
+  color: #5E96FC;
 }

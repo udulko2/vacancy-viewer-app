@@ -1,19 +1,18 @@
 import { Loader, Pagination } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getVacancies } from "../../api/api";
 import Card from "../../components/card/Card";
 import EmptyState from "../../components/empty/EmptyState";
 import FilterBar from "../../components/filter/FilterBar";
 import SearchBar from "../../components/search/SearchBar";
-import { setEmpty } from "../../store/vacanciesSlice";
+import { setCurrentPage, setIgnore } from "../../store/vacanciesSlice";
 import './search.css';
 
 const Search = () => {
-  console.log("SEARCH ENTRY");
-
   const dispatch = useDispatch()
-  const selectedCatalog = useSelector(state => state.catalogues.selectedCatalog)
+  const searchValue = useSelector(state => state.search.searchValue)
+  const catalog = useSelector(state => state.catalogues.catalog)
   const paymentFrom = useSelector(state => state.payment.paymentFrom)
   const paymentTo = useSelector(state => state.payment.paymentTo)
 
@@ -23,41 +22,19 @@ const Search = () => {
   const totalCount = useSelector(state => state.vacancies.totalCount)
   const perPage = useSelector(state => state.vacancies.perPage)
   const currentPage = useSelector(state => state.vacancies.currentPage)
-
-  // const [empty, setEmpty] = useState(false)
-  const empty = useSelector(state => state.vacancies.empty)
-
-  const [searchValue, setSearchValue] = useState("")
+  const ignore = useSelector(state => state.vacancies.ignore)
 
   const pagesCount = Math.ceil(totalCount / perPage)
 
   useEffect(() => {
-    console.log("SEARCH MOUNT! Total: " + totalCount);
-    dispatch(getVacancies(searchValue, paymentFrom, paymentTo, selectedCatalog, perPage, currentPage))
-
-    return () => {
-      console.log("SEARCH UNMOUNT! Total: " + totalCount);
-      // setEmpty(false)
-      dispatch(setEmpty(false))
+    if (!ignore) {
+      dispatch(getVacancies(searchValue, catalog, paymentFrom, paymentTo, perPage, currentPage))
     }
-  }, [dispatch])
+  }, [dispatch, ignore, searchValue, catalog, paymentFrom, paymentTo, perPage, currentPage])
 
-  function handleSearchChange(e) {
-    setSearchValue(e.target.value)
-  }
-
-  function handleSearch() {
-    dispatch(getVacancies(searchValue, paymentFrom, paymentTo, selectedCatalog, perPage, 1))
-  }
-
-  function handlePaginationChange(pageNumber) {
-    dispatch(getVacancies(searchValue, paymentFrom, paymentTo, selectedCatalog, perPage, pageNumber))
-  }
-
-  console.log("SEARCH TOTAL COUNT: " + totalCount);
-  console.log("SEARCH empty: " + empty);
-  if (empty) {
-    // return <Navigate to='/empty/?source_page=search' />
+  function handleSearch(page) {
+    dispatch(setIgnore(false))
+    dispatch(setCurrentPage(page))
   }
 
   return (
@@ -66,29 +43,29 @@ const Search = () => {
         <div className="search-inner">
           <FilterBar handleSearch={handleSearch} />
           <div className="search-root">
-            <SearchBar searchValue={searchValue} onChange={handleSearchChange} handleSearch={handleSearch} />
+            <SearchBar handleSearch={handleSearch} />
             <div className="search-results">
-              {isFetchError &&
-                <div style={{ color: 'red', width: 'fit-content', margin: '0 auto' }}>
-                  Error occurred! Please reload the page!
-                </div>
-              }
               {
-                !isFetching
+                (isFetchError &&
+                  <div style={{ color: 'red', width: 'fit-content', margin: '0 auto 16px' }}>
+                    Error occurred! Please reload the page.
+                  </div>)
+                ||
+                (!isFetching
                   ?
-                  empty ?
+                  (totalCount === 0 ?
                     <div className="no-results">
                       <EmptyState message={'По вашему запросу ничего не найдено!'} />
                     </div>
                     :
-                    vacancies.map(v => <Card key={v.id} vacancy={v} />)
+                    vacancies.map(v => <Card key={v.id} vacancy={v} />))
                   :
                   <div className="loader">
                     <Loader size={100} />
-                  </div>
+                  </div>)
               }
             </div>
-            {!isFetching && <Pagination value={currentPage} onChange={handlePaginationChange} total={pagesCount} />}
+            {!isFetching && !isFetchError && <Pagination value={currentPage} onChange={p => handleSearch(p)} total={pagesCount} />}
           </div>
         </div>
       </div>

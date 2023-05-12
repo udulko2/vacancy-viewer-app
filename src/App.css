@@ -1,6 +1,7 @@
 .container {
-  max-width: 1116px;
+  max-width: 1136px;
   width: 100%;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
@@ -11,4 +12,8 @@
 .mantine-Group-root {
   width: fit-content;
   margin: 0 auto 44px auto;
+}
+
+.mantine-Group-root > button[data-active="true"] {
+  background-color: #5E96FC;
 }

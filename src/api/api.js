@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { setCatalogues } from '../store/cataloguesSlice';
-import { setEmpty, setFetchError, setIsFetching, setVacancies } from '../store/vacanciesSlice';
+import { setFetchError, setIgnore, setIsFetching, setTotalCount, setVacancies } from '../store/vacanciesSlice';
 
 const config = {
   // baseURL: 'https://api.superjob.ru/2.0/',
@@ -11,33 +10,34 @@ const config = {
   }
 }
 
-export const getVacancies = (searchQuery, paymentFrom, paymentTo, selectedCatalog, perPage, currentPage) => {
+export const getVacancies = (searchQuery, catalog, paymentFrom, paymentTo, perPage, currentPage) => {
   return async (dispatch) => {
     try {
       dispatch(setFetchError(false))
       dispatch(setIsFetching(true))
-      const response = await axios.get(`vacancies/?published=1&keyword=${searchQuery}&payment_from=${paymentFrom}&payment_to=${paymentTo}&catalogues=${selectedCatalog}&count=${perPage}&page=${currentPage}`,
+      const response = await axios.get(`vacancies/?published=1&keyword=${searchQuery}&catalogues=${catalog}&payment_from=${paymentFrom}&payment_to=${paymentTo}&count=${perPage}&page=${currentPage}`,
         config)
-      console.log('getVacancies METHOD TOTAL COUNT: ' + response.data.total);
-      dispatch(setEmpty(response.data.total === 0))
-      dispatch(setVacancies({
-        response: response.data,
-        currentPage
-      }))
+      dispatch(setIsFetching(false))
+      dispatch(setTotalCount(response.data.total))
+      dispatch(setVacancies(response.data))
+      dispatch(setIgnore(true))
     } catch (error) {
       dispatch(setFetchError(true))
       dispatch(setIsFetching(false))
+      dispatch(setIgnore(true))
     }
   }
 }
 
-export const getCatalogues = () => async dispatch => {
+export const getCatalogues = async (setCatalogues) => {
   // const response = await axios.get('https://api.superjob.ru/2.0/catalogues/')
   const response = await axios.get('catalogues/', config)
-  dispatch(setCatalogues(response.data))
+  setCatalogues(response.data)
 }
 
-export const getVacancy = async (id, setVacancy) => {
+export const getVacancy = async (id, setVacancy, setIsFetching) => {
+  setIsFetching(true)
   const response = await axios.get(`vacancies/${id}`, config)
+  setIsFetching(false)
   setVacancy(response.data)
 }
