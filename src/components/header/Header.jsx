@@ -4,8 +4,8 @@ import logo from './assets/logo.jpg';
 import './header.css';
 
 const Header = () => {
-  const location = useLocation()
-  const active = (location.pathname === '/empty/') && (location.search === '?source_page=starred')
+  const { pathname, search } = useLocation()
+  const active = (pathname === '/empty/') && (search === '?source_page=starred')
 
   return (
     <div className="header">

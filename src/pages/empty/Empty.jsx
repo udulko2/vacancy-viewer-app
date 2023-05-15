@@ -11,7 +11,7 @@ const Empty = () => {
   if (sourcePage === "search")
     message = "По вашему запросу ничего не найдено!"
   else if (sourcePage === "starred")
-    message = "Упс, здесь еще ничего нет!"
+    message = "Здесь еще ничего нет!"
   else
     message = "Empty State"
 

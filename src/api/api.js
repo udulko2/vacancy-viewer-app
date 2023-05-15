@@ -34,10 +34,3 @@ export const getCatalogues = async (setCatalogues) => {
   const response = await axios.get('catalogues/', config)
   setCatalogues(response.data)
 }
-
-export const getVacancy = async (id, setVacancy, setIsFetching) => {
-  setIsFetching(true)
-  const response = await axios.get(`vacancies/${id}`, config)
-  setIsFetching(false)
-  setVacancy(response.data)
-}

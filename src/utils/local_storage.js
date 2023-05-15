@@ -11,7 +11,8 @@ export const updateLocalStorage = (vacancy, setStarred) => {
   const vacancyLite = {
     id: vacancy.id, profession: vacancy.profession,
     payment_from: vacancy.payment_from, currency: vacancy.currency,
-    type_of_work: { title: vacancy.type_of_work.title }, town: { title: vacancy.town.title }
+    type_of_work: { title: vacancy.type_of_work.title }, town: { title: vacancy.town.title },
+    vacancyRichText: vacancy.vacancyRichText
   }
 
   let starsArray = JSON.parse(localStorage.getItem(LS_KEY))

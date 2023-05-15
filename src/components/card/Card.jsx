@@ -15,7 +15,7 @@ const Card = ({ vacancy }) => {
   return (
     <div className="card" data-elem={`vacancy-${vacancy.id}`}>
       <div className='vacancy-info'>
-        <div className="vacancy-name"><Link to={`/vacancy/${vacancy.id}`}>{vacancy.profession}</Link></div>
+        <div className="vacancy-name"><Link to={`/vacancy/${vacancy.id}`} state={vacancy}>{vacancy.profession}</Link></div>
         <div className="vacancy-details">
           <div>з/п от {vacancy.payment_from} {vacancy.currency}</div><div>•</div><div>{vacancy.type_of_work.title}</div>
         </div>

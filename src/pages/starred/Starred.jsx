@@ -23,9 +23,10 @@ const Starred = () => {
         const starsOnPage = starsArray.slice(start, end)
         setVacancies(starsOnPage)
         setTotalCount(total)
-      } else {
-        setRedirect(true)
       }
+    }
+    if (!starsArray || starsArray.length === 0) {
+      setRedirect(true)
     }
   }, [currentPage])
 
