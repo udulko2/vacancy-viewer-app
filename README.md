@@ -1,3 +1,3 @@
 ## Vacancy viewer app
 
-### Live site [URL](https://oculus-html-4797c2.netlify.app)
+### Live site [URL](https://luminous-a910e1.netlify.app)
